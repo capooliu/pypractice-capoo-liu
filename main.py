@@ -19,7 +19,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
-from banknote_classifier.models import VGG16
+from banknote_classifier.registry import MODEL_REGISTRY
 from banknote_classifier.dataset import CustomDataset, CustomTestDataset, get_img_info
 
 # ==========================================
@@ -212,7 +212,8 @@ def main():
     )
 
     # 3. Model, Loss, Optimizer & Scheduler
-    model = VGG16(num_classes=Config.NUM_CLASSES).to(device)
+    model_cls = MODEL_REGISTRY.get("vgg16")
+    model = model_cls(num_classes=Config.NUM_CLASSES).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=Config.LEARNING_RATE)
     

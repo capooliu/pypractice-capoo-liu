@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
+from .registry import MODEL_REGISTRY
 
+@MODEL_REGISTRY.register("vgg16")
 class VGG16(nn.Module):
     def __init__(self, num_classes=9):
         super(VGG16, self).__init__()
