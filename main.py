@@ -19,8 +19,8 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
-from models import VGG16
-from dataset import CustomDataset, CustomTestDataset, get_img_info
+from banknote_classifier.models import VGG16
+from banknote_classifier.dataset import CustomDataset, CustomTestDataset, get_img_info
 
 # ==========================================
 # CONFIGURATION & HYPERPARAMETERS
