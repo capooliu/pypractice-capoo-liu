@@ -1,5 +1,6 @@
-import torch.nn as nn
 from typing import Callable, Dict, Type
+
+import torch.nn as nn
 
 
 class ModelRegistry:
