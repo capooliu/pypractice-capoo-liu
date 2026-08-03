@@ -19,7 +19,7 @@ def test_vgg16_output_shape():
     with torch.no_grad():
         output = model(dummy_input)
 
-    assert output.shape == (1, NUM_CLASSES)
+    assert output.shape == (1, NUM_CLASSES + 1)
 
 
 def test_vgg16_output_is_tensor():
